@@ -3,12 +3,68 @@
   <head>
     <title>CrowdMarket</title>
     <%= csrf_meta_tags %>
-
+    <link href = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel = "stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+     <div class="container">
+       <%= link_to "CrowdMarket", '/', id: "logo" %>
+       <nav>
+         <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Home", '/'   %></li>
+          <% if current_user || current_seller %>
+            <% if current_user %>
+              <li><%= link_to "Profile", user_profile_path(current_user) %></li>
+            <% elsif current_seller %>
+              <li><%= link_to "Profile", seller_profile_path(current_seller) %></li>
+            <% end %>
+         		<% if current_user %>
+              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+              <li>
+                <a id="friend-requests-link" href = "#">Friend Requests <% if @user.friend_requests.count > 0 %><span class = "badge"><%= @user.friend_requests.count %></span><% end %></a>
+                <div id="friend-requests-container">
+                  <% @user.friend_requests.each do |user| %>
+                    <div class="friend-request-details">
+                      <% if user.has_image? %>
+                        <%= image_tag(user.images.first.file(:thumbnail)) %>
+                      <% else %>
+                        <%= image_tag("default_user_image.png", size: "50") %>
+                      <% end %>
+                      <span class="user-full-name"><%= user.full_name %></span>
+                      <%= link_to "Accept Request", user_friendship_accept_path(current_user,user), class: "friend-request-button" %>
+                      <%= link_to "Reject Request", user_friendship_reject_path(current_user,user), class: "friend-request-button" %>
+                    </div>
+                  <% end %>
+                </div>
+              </li>
+            <% elsif current_seller %>
+              <li><%= link_to "Sign out", destroy_session_path(current_seller), method: :delete %></li>
+            <% end %>
+          <% else %>
+            <li><%= link_to "Sign in", sign_in_path %></li>
+            <li><%= link_to "Sign up", sign_up_path %></li>
+         	<% end %>
+         </ul>
+       </nav>
+     </div>
+    </header>
+    <div class="container">
+      <%= notice %>
+      <%= yield %>
+    </div>
+    <script>
+      $( function() {
+        $('#friend-requests-container').hide();
+      });
+
+      $('#friend-requests-link').click(function(event) {
+        event.preventDefault();
+        $('#friend-requests-container').toggle();
+      });
+    </script>
   </body>
 </html>

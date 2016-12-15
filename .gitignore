@@ -13,5 +13,13 @@
 !/log/.keep
 !/tmp/.keep
 
+/public/system/images/files/*
+
 # Ignore Byebug command history file.
 .byebug_history
+
+/public/system/products/images/
+/public/system/posts/images/
+/public/system/users/images/
+/public/images
+/config/env.yml

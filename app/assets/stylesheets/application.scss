@@ -1,0 +1,519 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import url('https://fonts.googleapis.com/css?family=Raleway');
+ @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Source+Sans+Pro');
+
+/* Font sizes to be used with BootStrap Glyphicons */
+
+.gi-2x{font-size: 10px;}
+.gi-3x{font-size: 3em;}
+.gi-4x{font-size: 4em;}
+.gi-5x{font-size: 5em;}
+
+body {
+  padding-top: 100px;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #f4f1ec;
+}
+
+#logo {
+  font-size: 200%;
+  clear: left;
+  float: left;
+}
+
+.navbar-nav {
+  font-size: 120%;
+  bottom: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+.intro_message {
+  color: gray;
+  text-align: center;
+}
+
+.newsfeed {
+  margin: auto;
+  border-style: solid;
+  margin-bottom: 20px;
+  border-width: 0px;
+  max-width: 550px;
+  position: relative;
+}
+
+.edit_and_delete_posts {
+    position:absolute;
+    top: 0;
+    right: 0;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+.comment_options {
+  font-size: 11.5px;
+  margin-bottom: 100px;
+  color: gray;
+}
+
+.add_friend {
+  color: blue;
+}
+
+.users_friends {
+  padding-top: 400px;
+  bottom: 0;
+}
+/*
+.verticalLineLeft {
+  position: absolute;
+  border-right: 1px solid #CDC5C5;
+  top: 0;
+  bottom: 0;
+  padding-left: 220px;
+}
+
+.verticalLineRight {
+  position: absolute;
+  border-right: 1px solid #CDC5C5;
+  top: 0;
+  bottom: 0;
+  padding-left: 920px;
+}
+
+
+.comment_form {
+
+}
+*/
+
+.divider {
+  height:1px;
+  border:none;
+  color:#333;
+  background-color:#D7D3D3
+}
+
+.div-inline {
+  position: relative;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.profile_pic {
+  float: left;
+  margin-right: 10px;
+}
+
+.add-friend > * {
+  display: inline-block;
+}
+
+/*===========
+  post styles
+===========*/
+
+
+/*=====================
+		Profile page styles
+=======================
+*/
+
+.user-details-container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.user-profile-image-container {
+	display:inline-block;
+	vertical-align: top;
+}
+
+.user-details {
+	display: inline-block;
+}
+
+.user-friend-container > * {
+	display: block;
+}
+
+.user-friend-container .user-profile-image {
+	min-width: 50px;
+	min-height: 50px;
+}
+
+
+.profile_main, .profile-feed, .extras-div {
+  margin-top: 20px;
+}
+
+.profile_feed {
+
+}
+
+.test {
+  background-color: grey;
+  height: 500px;
+}
+
+/*=====================
+	Seller Profile page styles
+=======================
+*/
+.seller_profile_aside {
+  float: left;
+  width: 20%;
+  border-right: solid grey;
+  height: 1500px;
+
+}
+
+.products-container {
+  width: 80%;
+  float: right;
+  padding: none;
+}
+
+.product-row {
+  margin: 0 auto;
+}
+
+.product-div {
+  display: table;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  width: 30%;
+  height: 350px;
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.text-test {
+  text-align: center;
+}
+
+.product-image {
+  height: 150px;
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-image img {
+  max-width:100%;
+  max-height:100%;
+}
+
+.seller-options {
+  position: absolute;
+  bottom: 0;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#new-product-form {
+  width: 40%;
+}
+
+/*=====================
+		Sign in page styles
+=======================
+*/
+
+#sign-in-links {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+#sign-in-links li { float: left }
+
+#sign-in-links li a {
+	display: inlinne-block;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+#sign-in-links li a:focus, .active {background-color: #ccc;}
+
+.tab-content {
+	display: none;
+	padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+
+/*======================
+  friend requests styles
+======================*/
+
+#friend-requests-link {
+}
+
+#friend-requests-container {
+  position: absolute;
+  top: calc(100% + 1px);
+  right: 0;
+  white-space: nowrap;
+  background: #f0f0f0;
+  padding: 15px;
+  border: 1px solid #d3d3d3;
+  border-top: none;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 1px 2px 6px #0f0f0f;
+}
+
+
+
+.friend-request-details img, .user-full-name, .friend-request-button {
+  display: inline-block;
+}
+
+/*================
+  adverts styles
+================*/
+
+#canvas-wrap {
+  position: relative;
+  height: 400px;
+  min-height: 400px;
+
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  box-shadow: 2px 1px 6px #a0a0a0;
+}
+
+.user-ad {
+  position: absolute;
+}
+
+
+.user-ad:hover {
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+.overlay, #post-image {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.hidden-overlay {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#canvas, #post-image {
+  background-image: url('practice_image.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000;
+}
+
+.new-ad {
+  border: 1px solid #fff;
+  position: absolute;
+}
+
+#product-search-input {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-width: 200px;
+  margin-top: 15px;
+  z-index: 10;
+}
+
+#suggested-products {
+  background: #f0f0f0;
+  position: absolute;
+  top: calc(100% + 50px);
+  min-width: 200px;
+  max-width: 350px;
+  min-height: 200px;
+}
+
+
+.suggested-product-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 1px 2px 6px #0f0f0f;
+}
+
+.suggested-product-container img {
+  width: 100px;
+  height: 100px;
+}
+
+/*================
+  sign_up styles
+================*/
+.signup-bg {
+  background-image: url(https://grouptoursbooking.com/wp-content/uploads/2016/08/Cai-Rang-Floating-Market-Vietnam-Travel.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.signin-bg {
+  background-image: url(http://wallpapercave.com/wp/wIyKjjQ.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#user-form div {
+
+}
+
+.flip-container {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:400px;
+}
+
+.flip {
+    backface-visibility:             hidden;
+        -moz-backface-visibility:    hidden;
+        -ms-backface-visibility:     hidden;
+        -o-backface-visibility:      hidden;
+        -webkit-backface-visibility: hidden;
+    border: 1px solid grey;
+    border-radius: 15px 50px;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font: normal 14px helvetica, arial, san serif;
+    padding: 10px;
+    position: absolute;
+    transform-origin:             50% 50% 0px;
+        -moz-transform-origin:    50% 50% 0px;
+        -ms-transform-origin:     50% 50% 0px;
+        -o-transform-origin:      50% 50% 0px;
+        -webkit-transform-origin: 50% 50% 0px;
+    transition: all 1s;
+        -moz-transition:    all 1s;
+        -ms-transition:     all 1s;
+        -o-transition:      all 1s;
+        -webkit-transition: all 1s;
+    display: flex;
+    justify-content: center;
+    width:40%;
+    z-index: 100;
+    background-color: #f4f1ec;
+    opacity: 0.9;
+  }
+
+#side-1 {
+    transform:             rotateY( 0deg );
+        -moz-transform:    rotateY( 0deg );
+        -ms-transform:     rotateY( 0deg );
+        -o-transform:      rotateY( 0deg );
+        -webkit-transform: rotateY( 0deg );
+}
+
+#side-2 {
+    transform:             rotateY( 180deg );
+        -moz-transform:    rotateY( 180deg );
+        -ms-transform:     rotateY( 180deg );
+        -o-transform:      rotateY( 180deg );
+        -webkit-transform: rotateY( 180deg );
+}
+
+.flip-side-1 {
+    transform:             rotateY( 0deg ) !important;
+        -moz-transform:    rotateY( 0deg ) !important;
+        -ms-transform:     rotateY( 0deg ) !important;
+        -o-transform:      rotateY( 0deg ) !important;
+        -webkit-transform: rotateY( 0deg ) !important;
+}
+
+.flip-side-2 {
+    transform:             rotateY( 180deg ) !important;
+        -moz-transform:    rotateY( 180deg ) !important;
+        -ms-transform:     rotateY( 180deg ) !important;
+        -o-transform:      rotateY( 180deg ) !important;
+        -webkit-transform: rotateY( 180deg ) !important;
+}
+
+input {
+    display: block;
+    margin: 3px 0;
+    width: 294px;
+}
+
+#login {
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    display: block;
+    float: right;
+    text-align: center;
+    text-decoration: none;
+    width: 50px;
+  }
+
+.product-name {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #000;
+  display: block;
+  color: #fff;
+  padding: 5px 12px;
+  margin-top: 7px;
+}
+
+.buy-product-through-ad-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* =================
+  buy product styles
+==================*/
+
+.buy-product-image {
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,2 @@
+$("#post_<%= @post.id %>").find('.comments_div').html("<%=j render @post.comments %>");
+$("#post_<%= @post.id %>").find('#comment_text').val("");
