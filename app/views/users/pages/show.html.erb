@@ -23,7 +23,8 @@
 			</div>
  					</div>
  					<% end %>
- 			</div>
+					Last Active: <%= @user.update_attribute(:last_seen_at, Time.now) %>
+ 		</div>
  		<% end %>
 	</span>
 </div>
